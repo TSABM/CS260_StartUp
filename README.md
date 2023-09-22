@@ -10,3 +10,6 @@ I listed in the photo how I hope to meet the project requirements but to repeat.
 **Database Data** I will record high scores, and possibly data for asyncronous online play
 
 **Web socket data** Ideally I want syncronous online play, but barring that some kind of chat could work too
+
+## key gameplay features
+For those unfamiliar with FTL the gameplay loop is simple. A textbox appears explaining the current situation and the player makes choices. If a choice of theirs would put them in danger the combat phase begins where the players ship and whatever threat its facing begins being simulated. You decide how to allocate power and wether to attack untill you escape, defeat the enemy or are defeated. While real time combat like FTL uses might not be reaosnable for this project this gameplay loop should be easily made turn based.
