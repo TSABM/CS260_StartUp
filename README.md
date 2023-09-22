@@ -4,6 +4,7 @@ The pitch is simple: Imagine playing a game that captures the wonder of Brandon 
 ![photo of my handwritten notes on the subject as well as a couple sketches](sketches_and_notes.JPG)
 ## meeting the requirements
 I listed in the photo how I hope to meet the project requirements but to repeat.
+
 **Authentication** Simply I will have a log in process
 
 **Database Data** I will record high scores, and possibly data for asyncronous online play
