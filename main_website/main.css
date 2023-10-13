@@ -1,0 +1,56 @@
+body{
+    display: flex;
+    flex-direction: column;
+    background-color:slategrey;
+    font-family: helvetica, sans-serif;
+    color:white;
+    height: 100vh;
+}
+header {
+    display: flex;
+    flex: 1 80px;
+    background-color: darkslategrey;
+    flex-direction: row !important;
+  }
+/*only affect lists that are children fo headers*/
+header li{
+    margin-right: 20px;
+}
+main{
+    display: flex;
+    flex-direction: column;
+    /*  the align-items property is used to control how flex items or 
+    grid items are aligned along the cross-axis within a container.*/
+    align-items: center;
+    /* the justify-content property is used to control how the content inside a flex container or 
+    grid container is distributed along the main axis*/
+    justify-content: space-around;
+    height: 90vh;
+  }
+#loginToPlay{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    height:min-content;
+}
+footer {
+    display: flex;
+    flex: 0 30px;
+    text-align:center;
+    justify-content: end;
+    background: lightslategray;
+  }
+#nameAndGitHub{
+    display: flex;
+    flex-direction: row !important;
+}
+#nameAndGitHub p{
+    padding-right: 20px;
+}
+menu {
+    flex: 1;
+    display: flex;
+    /*  overwrite Bootstrap so the menu does not wrap */
+    flex-direction: row !important;
+    list-style: none;
+  }
