@@ -4,3 +4,6 @@ I learned in this assignment how to set up git with my VS code environement, how
 
 ## html
 I reviewed and learned html structure and completed the code pen
+
+#CSS
+I have done the requested code pens and deployed the updated simon folder. I am reviewing the simon example as I put CSS on my main page
