@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TSABM_play</title>
+    <!-- Bootstrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!-- The main CSS rules -->
+    <link rel="stylesheet" href="play.css"/>
   </head>
   <body>
     <header>
@@ -25,12 +29,38 @@
     <main>
       <p> Placehoder material here, a javascript application will be needed to make the game work</p>
       <img src = "Media/spaceships.png" alt = "Spaceships placeholder" width = "500">
+      <div id = game-box>
+        <div id = columns>
+        <!--stores the 3 rightmost elements-->
+          <div id = leftColumn>
+            <div id = menu></div>
+            <div id = status-box></div>
+            <div id = player-ship-box></div>
+          </div>
+        
+          <div id = rightColumn>
+            <div id = enemy-box></div>
+            <div id = HUD-box></div>
+          </div>
+        </div>
+
+        <div id = action-box>
+          <button type="button" class="btn btn-primary">1 Attack</button>
+          <button type="button" class="btn btn-primary">2 Dodge</button>
+          <button type="button" class="btn btn-primary">3 Fake-out</button>
+          <button type="button" class="btn btn-primary">4</button>
+          <button type="button" class="btn btn-primary">5</button>
+          <button type="button" class="btn btn-primary">6</button>
+        </div>
+        
+      </div>
+
       <li>Chat</li>
       <li>Beans: yolo double snowspeeders</li>
       <input type="text" id="chat" placeholder="Your reply here" />
     </main>
 
-    <footer>
+    <footer id = nameAndGitHub>
       <hr />
       <p>Tyler S.</p>
       <a href="https://github.com/TSABM/CS260_StartUp/tree/main">GitHub</a>

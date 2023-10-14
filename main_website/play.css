@@ -27,12 +27,6 @@ main{
     justify-content: space-around;
     height: 90vh;
   }
-#loginToPlay{
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-    height:min-content;
-}
 footer {
     display: flex;
     flex: 0 30px;
@@ -47,6 +41,15 @@ footer {
 #nameAndGitHub p{
     padding-right: 20px;
 }
+#game-box{
+    display:flex;
+    border:thin solid black;
+}
+#game-box div{
+    display:flex;
+    border:thin solid black;
+}
+
 menu {
     flex: 1;
     display: flex;
@@ -54,13 +57,3 @@ menu {
     flex-direction: row !important;
     list-style: none;
   }
-table{
-    background-color:darkolivegreen;
-    border:thin solid black;
-}
-th{
-    border:thin solid black;
-}
-td{
-    border:thin solid black;
-}
