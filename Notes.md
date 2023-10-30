@@ -19,6 +19,7 @@ I have reworked styling for the pages, in general they work fine, though the gam
     
     In the following code,  what does a div tag do?
       defines a division or a section in an HTML document
+      
     In the following code, what is the difference between the #title and .grid selector?  
       Simple selectors (select elements based on name, id, class) ex: p{}selects all p elements, #para1{}selects only this id,       
         .center selects a class. there are several ways to stack this including <p class "c1, c2"></p>. 
