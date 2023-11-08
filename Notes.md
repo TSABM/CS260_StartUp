@@ -11,6 +11,10 @@ I have done the requested code pens and deployed the updated simon folder. I am 
 ## CSS cont.
 I have reworked styling for the pages, in general they work fine, though the gameplay page needs work... a lot of work. Luckily the layout is easy enough that everything works even when resized. That will change when the game is implimented in javascript.
 
+## Services
+Who boy that was a lot to take in. I just submitted the simon service after realizing I didnt need to edit the code to make it work, the instructions were just to show me how for my startup, so theres that. It seems to work byt my startup is so far from complete its honestly intimidating. I have a lot to do to 1) get the code to work and 2) move all javascripting to the server side
+
+
 ### Midterm notes:
     In the following code, what does the link element do?
       The <link> tag defines the relationship between the current document and an external resource.
