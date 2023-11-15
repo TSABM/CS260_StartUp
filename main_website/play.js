@@ -9,28 +9,68 @@ canvas.height = 270
 //now to create canvas objects
 class Sprite{
     //constructs sprite
-    constructor(position){
+    constructor(position, velocity){
         this.position = position
+        this.velocity = velocity
     }
     //drawing the sprite
     draw(){
         canvasContext.fillStyle = "blue"
         canvasContext.fillRect(this.position.x, this.position.y, 50, 50)
         let username = localStorage.getItem("userName")
+        console.log(username)
         let name = "no username detected"
         if(username){
             name = username
         }
         canvasContext.fillText("your name is: " + name, 100, 100)
     }
+    update(){
+        this.draw()
+        //update the position here
+    }
+}
+
+//timer
+function startTimer(){
+    //store start time
+    startTime = Date.now()
+    localStorage.setItem("startTime", startTime);
+}
+function endTimer(){
+    //store end time
+    endTime = Date.now() - localStorage.getItem("startTime")
 }
 
 
 //creating player sprite
 const player = new Sprite({
+    position:{
     x:0,
     y:0
+    },
+    velocity:{
+        x:0,
+        y:0
+    }
 })
+const projectile = new Sprite({
+    position:{
+    x:500,
+    y:0
+    },
+    velocity:{
+        x:0,
+        y:0
+    }
+})
+
+//animation
+
+function animate(){
+    window.requestAnimationFrame(animate)
+    player.update()
+}
 
 player.draw()
 
