@@ -41,15 +41,12 @@ footer {
 #nameAndGitHub p{
     padding-right: 20px;
 }
-#game-box{
-    display:flex;
-    border:thin solid black;
+#chatBox{
+    overflow:auto
 }
-#game-box div{
-    display:flex;
-    border:thin solid black;
+canvas{
+    background-color: aliceblue;
 }
-
 menu {
     flex: 1;
     display: flex;
