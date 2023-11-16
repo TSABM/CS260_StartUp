@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TSABM_play</title>
+    <!-- Bootstrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!-- The main CSS rules -->
+    <link rel="stylesheet" href="play.css"/>
+  </head>
+  <body>
+    <header>
+      <h1>Play the game</h1>
+
+      <!-- Navigation elements -->
+      <nav>
+        <menu>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="play.html">Play</a></li>
+          <li><a href="scores.html">Scores</a></li>
+          <li><a href="about.html">About</a></li>
+        </menu>
+      </nav>
+
+      <hr />
+    </header>
+
+    <main>
+      
+      <script src = "play.js"></script> <!-- only used in initialization -->
+
+      <div>
+        <button onclick="increaseScore">+1 score</button>
+        <button onclick="decreaseScore">-1 score</button>
+      </div>
+
+      
+      <p>Chat:</p>
+      <div id = "chatBox">
+        <ul id = "chatLog">
+        </ul>
+      </div>
+      <input id="chatInput" type="text" size="20" placeholder="Enter message here">
+      <button onclick="sendMessage()">Submit</button>
+    
+    </main>
+
+    <footer id = nameAndGitHub> 
+      <hr />
+      <p>Tyler S.</p>
+      <a href="https://github.com/TSABM/CS260_StartUp/tree/main">GitHub</a>
+    </footer>
+  </body>
+</html>

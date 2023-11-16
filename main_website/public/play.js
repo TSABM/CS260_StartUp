@@ -7,6 +7,7 @@ canvas.height = 270
 
 
 //now to create canvas objects
+/*
 class Sprite{
     //constructs sprite
     constructor(position, velocity){
@@ -30,16 +31,24 @@ class Sprite{
         //update the position here
     }
 }
+*/
 
 //timer
-function startTimer(){
-    //store start time
-    startTime = Date.now()
-    localStorage.setItem("startTime", startTime);
+function increaseScore(){
+    var currScore = localStorage.getItem("myScore")
+    if (currScore == null){
+        currScore = 0
+    }
+    currScore += 1
+    localStorage.setItem("myScore", currScore);
 }
-function endTimer(){
-    //store end time
-    endTime = Date.now() - localStorage.getItem("startTime")
+function decreaseScore(){
+    var currScore = localStorage.getItem("myScore")
+    if (currScore == null){
+        currScore = 0
+    }
+    currScore -= 1
+    localStorage.setItem("myScore", currScore);
 }
 
 
