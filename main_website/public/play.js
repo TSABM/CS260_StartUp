@@ -1,9 +1,9 @@
 //canvas operation
-const canvas = document.querySelector('canvas');
-const canvasContext = canvas.getContext('2d')
+//const canvas = document.querySelector('canvas');
+//const canvasContext = canvas.getContext('2d')
 
-canvas.width = 480
-canvas.height = 270
+//canvas.width = 480
+//canvas.height = 270
 
 
 //now to create canvas objects
@@ -33,7 +33,18 @@ class Sprite{
 }
 */
 
-//timer
+//scores
+async function loadScores(){
+    var scores = []
+    try{
+
+    }
+    catch{
+
+    }
+
+}
+
 function increaseScore(){
     var currScore = localStorage.getItem("myScore")
     if (currScore == null){
@@ -51,8 +62,13 @@ function decreaseScore(){
     localStorage.setItem("myScore", currScore);
 }
 
+function updateScore(){
+
+}
+
 
 //creating player sprite
+/*
 const player = new Sprite({
     position:{
     x:0,
@@ -92,10 +108,14 @@ window.addEventListener('keydown', (event) => {
 //Add timer start and stop during game run time. A canvas button will start the game and death will end it.
 
 //Canvas Operation
-
+*/
 
 //Chat
-window.addEven
+//window.addEven
+function initPlayerName(){
+    var nameEl = document.getElementById("playerName");
+    nameEl.textContent = localStorage.getItem("userName") ?? "no name";
+}
 function sendMessage(){
     var ul = document.getElementById("chatLog");
     var li = document.createElement("li");

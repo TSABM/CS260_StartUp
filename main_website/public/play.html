@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script src = "play.js"></script> <!-- only used in initialization -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TSABM_play</title>
@@ -27,29 +28,30 @@
     </header>
 
     <main>
-      
-      <script src = "play.js"></script> <!-- only used in initialization -->
 
       <div>
-        <button onclick="increaseScore">+1 score</button>
-        <button onclick="decreaseScore">-1 score</button>
+        <button onclick="increaseScore()">+1 score</button>
+        <button onclick="decreaseScore()">-1 score</button>
       </div>
 
-      
+      <div id = "chat">
+      <span id = "playerName"></span>
       <p>Chat:</p>
       <div id = "chatBox">
         <ul id = "chatLog">
         </ul>
       </div>
+
       <input id="chatInput" type="text" size="20" placeholder="Enter message here">
       <button onclick="sendMessage()">Submit</button>
-    
+      </div>
     </main>
 
     <footer id = nameAndGitHub> 
       <hr />
       <p>Tyler S.</p>
       <a href="https://github.com/TSABM/CS260_StartUp/tree/main">GitHub</a>
+      <script>initPlayerName()</script> <!--Runs init player name after doc is loaded-->
     </footer>
   </body>
 </html>

@@ -18,7 +18,7 @@ header li{
 }
 main{
     display: flex;
-    flex-direction: column;
+    flex-direction: row-reverse;
     /*  the align-items property is used to control how flex items or 
     grid items are aligned along the cross-axis within a container.*/
     align-items: center;
@@ -41,8 +41,13 @@ footer {
 #nameAndGitHub p{
     padding-right: 20px;
 }
+#chat{
+    background-color: gray;
+    height: 90vh;
+}
 #chatBox{
-    overflow:auto
+    height: 70vh;
+    overflow:auto;
 }
 canvas{
     background-color: aliceblue;

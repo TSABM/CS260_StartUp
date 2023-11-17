@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang = eng>
   <head>
+    <script src = "login.js"></script>
+
     <meta charset="UTF-8" />
     <!--sets standard viewport settings-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -28,13 +30,14 @@
 
   <!--below the main login element is located, no password is asked for as of yet-->
     <main>
+
       <div id = loginToPlay>
         <h1>Welcome</h1>
         <p>Login to play</p>
         <form method="get" action="play.html">
           <label for="name">Name</label>
           <input type="text" id="nameInput" placeholder="Your name here" />
-          <button class = "btn-primary" onclick = "login()">Login</button>
+          <button type = "button" class = "btn-primary" onclick = "login()">Login</button>
         </form>
       </div>
     </main>
