@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TSABM_scores</title>
+    <!-- Bootstrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!-- The main CSS rules -->
+    <link rel="stylesheet" href="main.css"/>
+  </head>
+  <body>
+    <header>
+      <h1>Game scores</h1>
+
+      <nav>
+        <menu>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="play.html">Play</a></li>
+          <li><a href="scores.html">Scores</a></li>
+          <li><a href="about.html">About</a></li>
+        </menu>
+      </nav>
+
+      <hr />
+    </header>
+
+    <main>
+      <table id = scoreTable>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>user name</th>
+            <th>Score</th>
+          </tr>
+        </thead>
+        <tbody id = "scores"></tbody>
+      </table>
+    </main>
+
+    <footer>
+      <hr />
+      <p>Tyler S.</p>
+      <a href="https://github.com/TSABM/CS260_StartUp/tree/main">GitHub</a>
+    </footer>
+    <script src = "scores.js"></script>
+  </body>
+</html>
