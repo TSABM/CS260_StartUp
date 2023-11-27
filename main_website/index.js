@@ -24,11 +24,38 @@ app.listen(port, () => {
     console.log(`Listening on port ${port}`);
   });
 
-//login?
 
 //get scores
-apiRouter.get() // more code here
+apiRouter.get('/scores', (_req, res) => {
+  res.send(scores);
+});
 
-//submit scores
+//submit scores 
+apiRouter.post('/score', (req, res) => {
+  scores = updateScores(req.body, scores)
+  res.send(scores)
+})
 
 //update scores javascript function here (submit calls this)
+letScores = []
+//FIXME
+function updateScores(newScore, scores){
+  let found = false;
+  for (const [i, prevScore] of scores.entries()) {
+    if (newScore.score > prevScore.score) {
+      scores.splice(i, 0, newScore);//(position, howManyToRemove, item(s)ToAdd)
+      found = true;
+      break;
+    }
+  }
+
+  if (!found) {
+    scores.push(newScore);
+  }
+
+  if (scores.length > 10) {
+    scores.length = 10;
+  }
+
+  return scores;
+}
