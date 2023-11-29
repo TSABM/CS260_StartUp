@@ -35,12 +35,13 @@ class Sprite{
 
 //scores
 async function loadScores(){ // need to grab scores from server... and store locally for the game
+    localStorage.setItem("myScore", 0);
     var scores = []
     try{
         const response = await fetch('/api/scores');
         scores = await response.json(); //grabbing json scores
 
-        localStorage.setItem('scores', JSON.stringify(scores)); //reading json and loading into local
+        localStorage.setItem('scores', JSON.parse(scores)); //reading json and loading into local
         //fixme need to set "my Score" now
     }
     catch{
@@ -54,7 +55,7 @@ async function loadScores(){ // need to grab scores from server... and store loc
 }
 
 async function storeScore(score){ //need to send scores to server
-    const userName = this.getPlayerName();
+    const userName = localStorage.getItem('userName') ?? 'Mystery player'; //not a function
     const newScore = {name: userName, score: score};
 
     try {
@@ -100,21 +101,23 @@ function updateScoresLocal(newScore){
     localStorage.setItem('scores', JSON.stringify(scores));
 }
 
-function increaseScore(){ 
-    var currScore = localStorage.getItem("myScore")
-    if (currScore == null){
+function increaseScore(){
+    var currScore = parseInt(localStorage.getItem("myScore"))
+    if (currScore == null || currScore == "NaN"){
         currScore = 0
     }
     currScore += 1
     localStorage.setItem("myScore", currScore);
+    storeScore(currScore)
 }
-function decreaseScore(){
-    var currScore = localStorage.getItem("myScore")
-    if (currScore == null){
+function decreaseScore(){ //problem this aint working, data retrieved isnt ints I dont think check if json
+    var currScore = parseInt(localStorage.getItem("myScore"))
+    if (currScore == null || currScore == "NaN"){
         currScore = 0
     }
     currScore -= 1
     localStorage.setItem("myScore", currScore);
+    storeScore(currScore)
 }
 
 

@@ -37,7 +37,7 @@ apiRouter.post('/score', (req, res) => {
 })
 
 //update scores javascript function here (submit calls this)
-letScores = []
+let scores = []
 //FIXME
 function updateScores(newScore, scores){
   let found = false;
