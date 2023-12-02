@@ -41,7 +41,6 @@ footer {
 #nameAndGitHub p{
     padding-right: 20px;
 }
-<<<<<<<< HEAD:main_website/public/play.css
 #chat{
     background-color: gray;
     height: 90vh;
@@ -49,16 +48,8 @@ footer {
 #chatBox{
     height: 70vh;
     overflow:auto;
-========
-#game-box{
-    display:flex;
-    border:thin solid black;
->>>>>>>> 44dd1c4e7364ac5e4575b08664836cbac2ff87b4:main_website/play.css
 }
-#game-box div{
-    display:flex;
-    border:thin solid black;
-}
+
 
 menu {
     flex: 1;

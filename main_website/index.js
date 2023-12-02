@@ -1,6 +1,7 @@
 //creates the express object which weill be used to listen on ports
 const express = require('express');
 const app = express();
+const DB = require('./database.js');
 
 // The service port. In production the front-end code is statically hosted by the service on the same port.
 const port = process.argv.length > 2 ? process.argv[2] : 3000;
@@ -26,36 +27,14 @@ app.listen(port, () => {
 
 
 //get scores
-apiRouter.get('/scores', (_req, res) => {
+apiRouter.get('/scores', async (_req, res) => {
+  const scores = await DB.getHighScores();
   res.send(scores);
 });
 
 //submit scores 
-apiRouter.post('/score', (req, res) => {
-  scores = updateScores(req.body, scores)
+apiRouter.post('/score', async (req, res) => {
+  DB.addScore(req.body);
+  const scores = await DB.getHighScores();
   res.send(scores)
 })
-
-//update scores javascript function here (submit calls this)
-let scores = []
-//FIXME
-function updateScores(newScore, scores){
-  let found = false;
-  for (const [i, prevScore] of scores.entries()) {
-    if (newScore.score > prevScore.score) {
-      scores.splice(i, 0, newScore);//(position, howManyToRemove, item(s)ToAdd)
-      found = true;
-      break;
-    }
-  }
-
-  if (!found) {
-    scores.push(newScore);
-  }
-
-  if (scores.length > 10) {
-    scores.length = 10;
-  }
-
-  return scores;
-}
