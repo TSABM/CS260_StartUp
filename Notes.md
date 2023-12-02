@@ -3,7 +3,6 @@
 ## startup notes
 Had to signifigantly rework my website taking liberally from the simon example to get things working. Github is broken and wont accept git commits after I added gitignore so I need to fix that. I have manually added some of the files to github to preserve them but may main website directory is full of junk rn. Attaching the api's to the javascript pages was interesting .
 
-
 ## setting up github
 I learned in this assignment how to set up git with my VS code environement, how to handle SSH keys, and a little about commits and merges.
 
