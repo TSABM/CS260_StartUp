@@ -1,4 +1,10 @@
 # CS260_StartUp
+
+## startup notes
+Had to signifigantly rework my website taking liberally from the simon example to get things working. Github is broken and wont accept git commits after I added gitignore so I need to fix that. I have manually added some of the files to github to preserve them but may main website directory is full of junk rn. Attaching the api's to the javascript pages was interesting .
+
+## Other notes were put in the notes document not realizig some of them were for the readme
+
 ## the pitch
 The pitch is simple: Imagine playing a game that captures the wonder of Brandon sandersons works. He writes compelling stories and has said that he wants someone to adapt his stories into video games, why not do that here? The hit indie game FTL is a simple top down 2-d game where the player controls crew on a space ship, Brandodn Sanderson has a sci fi series caled the cytoverse that could be used for a FTL like game that you could play in the browser. Plus in case we couldnt pair it with Brandon Sandersons works his cytoverse is strongly inspired by already existing fiction so if the game was built and had to be debranded it would be very easy.
 ![photo of my handwritten notes on the subject as well as a couple sketches](sketches_and_notes.JPG)
