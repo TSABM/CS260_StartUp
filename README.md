@@ -1,5 +1,8 @@
 # CS260_StartUp
 
+## database notes
+Ok learned today how mongo worked, set it all up, loaded a test set of data, set up simon, and set up my startup. Luckily little needed to be changed, though git merges did cause one css issue which I think I have resolved.
+
 ## startup notes
 Had to signifigantly rework my website taking liberally from the simon example to get things working. Github is broken and wont accept git commits after I added gitignore so I need to fix that. I have manually added some of the files to github to preserve them but may main website directory is full of junk rn. Attaching the api's to the javascript pages was interesting .
 
