@@ -1,5 +1,7 @@
 # This is my notes
 
+## note my web dev notes were moved to the readme file because I got docked for putting them here instead of there.
+
 ## startup notes
 Had to signifigantly rework my website taking liberally from the simon example to get things working. Github is broken and wont accept git commits after I added gitignore so I need to fix that. I have manually added some of the files to github to preserve them but may main website directory is full of junk rn. Attaching the api's to the javascript pages was interesting .
 
