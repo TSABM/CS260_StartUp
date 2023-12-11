@@ -1,5 +1,8 @@
 # CS260_StartUp
 
+##login notes
+Today I learned how to set up login and how to authenticate users. The most interesting part was learning how to not display parts of my site depending on if they were logged in. I'd like to learn more things we coudl use for authentication, and I'd love to learn more how to change how passwords are hashed.
+
 ## database notes
 Ok learned today how mongo worked, set it all up, loaded a test set of data, set up simon, and set up my startup. Luckily little needed to be changed, though git merges did cause one css issue which I think I have resolved.
 
