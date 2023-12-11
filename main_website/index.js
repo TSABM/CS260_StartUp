@@ -5,6 +5,8 @@ const DB = require('./database.js');
 const cookieParser = require('cookie-parser');
 const bcrypt = require('bcrypt');
 
+const authCookieName = 'token';
+
 // The service port. In production the front-end code is statically hosted by the service on the same port.
 const port = process.argv.length > 2 ? process.argv[2] : 3000;
 
@@ -19,6 +21,10 @@ app.use(cookieParser());
 
 //trust headers so ip can be read
 app.set('trust proxy', true);
+
+// Router for service endpoints
+var apiRouter = express.Router();
+app.use(`/api`, apiRouter);
 
 //create auth token
 apiRouter.post('/auth/create', async (req, res) => {
@@ -93,10 +99,6 @@ function setAuthCookie(res, authToken) {
     sameSite: 'strict',
   });
 }
-
-// Router for service endpoints
-var apiRouter = express.Router();
-app.use(`/api`, apiRouter);
 
 // Return the application's default page if the path is unknown
 app.use((_req, res) => {
