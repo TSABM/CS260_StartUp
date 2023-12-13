@@ -2,6 +2,115 @@
 
 ## note my web dev notes were moved to the readme file because I got docked for putting them here instead of there.
 
+### Final notes:
+    
+            What ports are used for HTTP, HTTPS, SSH?
+                port 80, tcp port 443, and port 22
+            What do HTTP status codes in the 300, 400, 500 range indicate?
+                redirection messages, client error responses, server error responses
+            What does the HTTP header content-type allows you to do?
+                The Content-Type representation header is used to indicate the original media type of the resource (json http etc)
+            What do the following attributes of a cookie do?
+                Domain : maps to waht domain the cookie comes from
+                Path : path the cookie was generated on
+                SameSite : will only return the cookie to the domain it was generated with
+                HTTPOnly : tells to not allow js to run on the browser so it can read the cookie first
+            Assuming the following Express middleware, what would be the console.log output for an HTTP GET request with a URL path of /foo/bar?
+                (in the test will be presented with some code with console logs in diff functions, my job is to determine which functions are called and in which order)
+            Given the following Express service code: What does the following JavaScript fetch return?
+                see last prob. fetch returns info from a call to a server (frontend calling from back end). Express service codes are the codes in the service usually called app (app.use(code here))
+
+            Given the following MongoDB query
+            { cost: { $gt: 10 }, name: /fran.*/}
+            select all of the matching documents.
+                Grab documents (each entry in mogodb is called a document) where cost = 10 and name = fran.* (. means any char and * means any number of that char)
+            
+            How should you store user passwords in a database?
+                hashed and salted
+            Assuming the following Node.js service code is executing with websockets, what will be logged to the console of the web browser?
+                onconnected/ ondisconnected / onmessage? I missed this
+            What is the WebSocket protocol used for?
+                Key aspect of web socket is instantaeous client to server connection where either can initiate the contact
+            What is JSX and how are the curly braces rendered?
+                JS and HTML smushed together. Anything after the return is rendered to the screen
+            Assuming a HTML document with a 
+            <div id="root"></div>
+            element, what content will the following React component generate?
+                  function Welcome(props) {
+                    return <h1>Hello, {props.name}</h1>;
+                  }
+                  function App() {
+                    return (
+                      <div>
+                        <Welcome name="Sara" />
+                        <Welcome name="Cahal" />
+                        <Welcome name="Edite" />
+                      </div>
+                    );
+                  }
+                  const root = ReactDOM.createRoot(document.getElementById('root'));
+                  root.render(<App />);
+                ANSWER: Hello sara, Hello Cahal, Hello Edite
+            Assuming a HTML document with a 
+            <div id="root"></div>
+            element, what content will the following React component generate?
+                function Numbers() { 
+                  const numbers = [1, 2, 3, 4, 5];
+                  const listItems = numbers.map((number) =>
+                    <li>{number}</li>
+                  );
+                  return(<ul>{listItems}</ul>)
+                }
+                const root = ReactDOM.createRoot(document.getElementById('root')); 
+                root.render(<Numbers/>);
+                ANSWER: lists the numbers 12345 in an unordered list (html unordered list the list will still be in order) (bullet points for each num)
+            What does the following React component do?
+            function Example() {
+              // Declare a new state variable, which we'll call "count"  
+              const [count, setCount] = useState(0);
+              return (
+                <div>
+                  <p>You clicked {count} times</p>
+                  <button onClick={() => setCount(count + 1)}>
+                    Click me
+                  </button>
+                </div>
+              );
+            }
+                ANSWER: It will return a message indicating how many times the button has been clicked (and will then increase the times clicked after)
+            What are React Hooks used for?
+                lets you modify states and handles the lifecycle events of a component (on create, on destroy, etc) hooks let you do different things with that
+            What is the useEffect hook used for?
+                Watches lifecycle events for the component and runs stuff based off those lifecycle events (so like when a component is rerendered) you can use useEffect hooks to update the page or destroy it when things change...
+            What does this code do?
+            export default function App() {
+              return (
+                <BrowserRouter>
+                  <Routes>
+                    <Route path="/" element={<Layout />}>
+                      <Route index element={<Home />} />
+                      <Route path="blogs" element={<Blogs />} />
+                      <Route path="contact" element={<Contact />} />
+                      <Route path="*" element={<NoPage />} />
+                    </Route>
+                  </Routes>
+                </BrowserRouter>
+              );
+            }
+                ANSWER: renders different components on top of each other depending on whats searched for
+            What role does npm play in web development?
+                manages your node packages and allows you to download third party packages and manages them
+            What does package.json do in a npm project?
+                Lists all the packages that you have, when you run scripts like deployement scripts it can tell it what packages to use or send or what command to use to run your server, and provides name and meta info about the project
+            What does the fetch function do?
+                see prev problem. fetching requests data from back end to be brought for use on the fornt end
+            What does node.js do?
+                runs js on your server
+            What does Vite do?
+                allows you to bundle all your code together for production so that it can be deployed to a server
+
+
+
 ## startup notes
 Had to signifigantly rework my website taking liberally from the simon example to get things working. Github is broken and wont accept git commits after I added gitignore so I need to fix that. I have manually added some of the files to github to preserve them but may main website directory is full of junk rn. Attaching the api's to the javascript pages was interesting .
 
