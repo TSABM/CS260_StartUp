@@ -29,6 +29,7 @@
                 hashed and salted
             Assuming the following Node.js service code is executing with websockets, what will be logged to the console of the web browser?
                 onconnected/ ondisconnected / onmessage? I missed this
+                ws on connect is when you get an unique user id and you assign a socket number, and such. on message is for when clients sned or receive messages...
             What is the WebSocket protocol used for?
                 Key aspect of web socket is instantaeous client to server connection where either can initiate the contact
             What is JSX and how are the curly braces rendered?
