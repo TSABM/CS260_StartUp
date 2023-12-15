@@ -1,5 +1,8 @@
 # CS260_StartUp
 
+## web socket
+I had difficulty with it because I had to reference simon and the chat sample we were given and both were pretty different. So far the chat function works but if someone is logged in as the same person in two instances the receipient sees something like "unknown" instead of the actual name. Not sure how to fix that yet.
+
 ##login notes
 Today I learned how to set up login and how to authenticate users. The most interesting part was learning how to not display parts of my site depending on if they were logged in. I'd like to learn more things we coudl use for authentication, and I'd love to learn more how to change how passwords are hashed.
 
