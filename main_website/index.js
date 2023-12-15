@@ -4,6 +4,7 @@ const app = express();
 const DB = require('./database.js');
 const cookieParser = require('cookie-parser');
 const bcrypt = require('bcrypt');
+const { peerProxy } = require('./peerProxy.js');
 
 const authCookieName = 'token';
 
@@ -104,11 +105,12 @@ function setAuthCookie(res, authToken) {
 app.use((_req, res) => {
     res.sendFile('index.html', { root: 'public' });
   });
-  
+
+/*  deprocated I think
 app.listen(port, () => {
     console.log(`Listening on port ${port}`);
   });
-
+*/
 
 //get scores
 apiRouter.get('/scores', async (_req, res) => {
@@ -116,9 +118,15 @@ apiRouter.get('/scores', async (_req, res) => {
   res.send(scores);
 });
 
-//submit scores 
+//submit scores note this may need changing
 apiRouter.post('/score', async (req, res) => {
   DB.addScore(req.body);
   const scores = await DB.getHighScores();
   res.send(scores)
 })
+
+const httpService = app.listen(port, () => {
+  console.log(`Listening on port ${port}`);
+});
+
+peerProxy(httpService);

@@ -1,37 +1,6 @@
-//canvas operation
-//const canvas = document.querySelector('canvas');
-//const canvasContext = canvas.getContext('2d')
+const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
+const socket = new WebSocket(`${protocol}://${window.location.host}/ws`);
 
-//canvas.width = 480
-//canvas.height = 270
-
-
-//now to create canvas objects
-/*
-class Sprite{
-    //constructs sprite
-    constructor(position, velocity){
-        this.position = position
-        this.velocity = velocity
-    }
-    //drawing the sprite
-    draw(){
-        canvasContext.fillStyle = "blue"
-        canvasContext.fillRect(this.position.x, this.position.y, 50, 50)
-        let username = localStorage.getItem("userName")
-        console.log(username)
-        let name = "no username detected"
-        if(username){
-            name = username
-        }
-        canvasContext.fillText("your name is: " + name, 100, 100)
-    }
-    update(){
-        this.draw()
-        //update the position here
-    }
-}
-*/
 
 //scores
 async function loadScores(){ // need to grab scores from server... and store locally for the game
@@ -122,62 +91,120 @@ function decreaseScore(){ //problem this aint working, data retrieved isnt ints 
 
 
 
-
-//creating player sprite
-/*
-const player = new Sprite({
-    position:{
-    x:0,
-    y:0
-    },
-    velocity:{
-        x:0,
-        y:0
-    }
-})
-const projectile = new Sprite({
-    position:{
-    x:500,
-    y:0
-    },
-    velocity:{
-        x:0,
-        y:0
-    }
-})
-
-//animation
-
-function animate(){
-    window.requestAnimationFrame(animate)
-    player.update()
-}
-
-player.draw()
-
-console.log(player)
-
-window.addEventListener('keydown', (event) => { 
-    console.log(event.key)
-})
-
-//Add timer start and stop during game run time. A canvas button will start the game and death will end it.
-
-//Canvas Operation
-*/
-
 //Chat
 //window.addEven
 function initPlayerName(){
     var nameEl = document.getElementById("playerName");
     nameEl.textContent = localStorage.getItem("userName") ?? "no name";
 }
+
+
+
+//Chat
+/*
+function configureWebSocket() {
+    const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
+    this.socket = new WebSocket(`${protocol}://${window.location.host}/ws`);
+    this.socket.onopen = (event) => {
+      this.displayMsg('system', 'game', 'connected');
+    };
+    this.socket.onclose = (event) => {
+      this.displayMsg('system', 'game', 'disconnected');
+    };
+    this.socket.onmessage = async (event) => {
+      const msg = JSON.parse(await event.data.text());
+      if (msg.type === GameEndEvent) {
+        this.displayMsg('chatLog', msg.from, `scored ${msg.value.score}`);
+      } else if (msg.type === GameStartEvent) {
+        this.displayMsg('player', msg.from, `started a new game`);
+      }
+    };
+  }
+  */
+/*
+displayMsg(cls, from, msg) {
+    const chatText = document.querySelector('#player-messages');
+    chatText.innerHTML =
+      `<div class="event"><span class="${cls}-event">${from}</span> ${msg}</div>` + chatText.innerHTML;
+  }
+  */
+/*
+broadcastEvent(from, type, value) {
+    const event = {
+      from: from,
+      type: type,
+      value: value,
+    };
+    this.socket.send(JSON.stringify(event));
+  }
+*/
+//
+
+//FIXME
+
+// Adjust the webSocket protocol to what is being used for HTTP
+
+
+// Display that we have opened the webSocket
+socket.onopen = (event) => {
+  appendMsg('system', 'websocket', 'connected');
+};
+
+// Display messages we receive from our friends
+socket.onmessage = async (event) => {
+  const text = await event.data.text();
+  const chat = JSON.parse(text);
+  appendMsg('friend', chat.name, chat.msg);
+};
+
+// If the webSocket is closed then disable the interface
+socket.onclose = (event) => {
+  appendMsg('system', 'websocket', 'disconnected');
+  //document.querySelector('#name-controls').disabled = true;
+  document.querySelector('#chatBox').disabled = true;
+};
+
+// Send a message over the webSocket
+function sendMessage() {
+  const msgEl = document.getElementById("chatInput");
+  const msg = msgEl.value;
+  if (!!msg) {
+    appendMsg('me', 'me', msg);
+    const name = localStorage.getItem("userName") ?? "no name";
+    socket.send(`{"name":"${name}", "msg":"${msg}"}`);
+    msgEl.value = '';
+  }
+}
+
+//old send message
+/*
 function sendMessage(){
     var ul = document.getElementById("chatLog");
     var li = document.createElement("li");
     li.appendChild(document.createTextNode(document.getElementById("chatInput").value));
     ul.appendChild(li);
 }
+*/
 
+// Create one long list of messages
+function appendMsg(cls, from, msg) {
+  //const chatText = document.querySelector('#chat-text');
+  var ul = document.getElementById("chatLog");
+  var li = document.createElement("li");
+  /*
+  chatText.innerHTML =
+    `<div><span class="${cls}">${from}</span>: ${msg}</div>` +
+    chatText.innerHTML;
+    */
+    li.appendChild(document.createTextNode(`"name":"${from}", "msg":"${msg}"`));
+    ul.appendChild(li);
+}
 
-//Chat
+//FIXME
+
+//configureWebSocket()
+//Verify this works
+const chatControls = document.querySelector('chatInput');
+const myName = localStorage.getItem('playerName');
+//upon loading the page checking if my name == no name and disabling chat if so
+chatControls.disabled = myName.value === 'no name';
