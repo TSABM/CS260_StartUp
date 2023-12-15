@@ -1,7 +1,7 @@
 # CS260_StartUp
 
 ## web socket part 2
-I cant figure out why the name is undefined......wait I think I just had a brain wave one sec. FIXED IT! There was an error grabbing it from the form initially but I stored another copy in local storage so I'm just using that one.
+I cant figure out why the name is undefined......wait I think I just had a brain wave one sec. FIXED IT! There was an error grabbing it from the form initially but I stored another copy in local storage so I'm just using that one. Oh also witness the power of my flex box that only expands so far in either direction then uses scrolling to prevent the chat from destroying the whole web page like the standard simon application does.
 
 ## web socket
 I had difficulty with it because I had to reference simon and the chat sample we were given and both were pretty different. So far the chat function works but if someone is logged in as the same person in two instances the receipient sees something like "unknown" instead of the actual name. Not sure how to fix that yet.
